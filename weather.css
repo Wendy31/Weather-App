@@ -1,0 +1,120 @@
+/*..............Inner Box..............*/
+.thumbnail {
+    position: relative;
+}
+
+.iconImg2 {
+    position: absolute;
+    top: 20%;
+    right: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50px 50px 50px 50px;
+}
+
+.cityName {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    width: 98%;
+    font-size: 30px;
+    color: black;
+}
+
+.description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    width: 80%;
+    background-color: rgba(200, 200, 200, 0.8);
+    font-size: 20px;
+}
+
+.temp {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 98%;
+    color: white;
+    font-size: 35px;
+}
+
+.allCities {
+    padding-top: 40px;
+}
+
+
+/*...............Icons..............*/
+.row {
+    display: flex;
+    flex-direction: row;
+    float: right;
+    margin-top: -70px;
+    margin-right: 120px;
+}
+
+.icon {
+    padding: 9px;
+    height: 100px;
+}
+
+/*.............Header...............*/
+.pagetitle {
+    position: relative;
+    margin-left: 130px;
+    margin-top: 0px;
+    font-size: 55px;
+}
+
+header {
+    padding-top: 30px;
+    border-bottom: 4px solid black;
+    height: 130px;
+}
+
+.searchbox {
+    position: relative;
+    float: left;
+    margin-top: 12px;
+    width: 500px;
+    margin-left: 200px;
+    text-align: center;
+}
+
+/*..............Footer............*/
+.footer {
+    height: 60px;
+    background: #eee;
+}
+
+.footer p {
+    text-align: center;
+}
+
+.buttonTop {
+    position: relative;
+    margin-left: 490px;
+    margin-top: 50px;
+}
+
+.mainTopCenter {
+    position: relative;
+    width: 80%;
+    height: auto;
+    margin: auto;
+}
+
+.centerH4 {
+    position: relative;
+    margin: auto;
+    margin-left: -57px;
+    margin-top: 20px;
+}

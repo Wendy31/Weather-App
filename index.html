@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<html lang="">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container" id="app">
+
+        <header>
+            <h1 class="pagetitle">Weather Around the World</h1>
+
+            <div class="row">
+                <div class="icon">
+                    <img id="iconImg" src="icons/sun.gif" class="img-circle" alt="sun" width="50" height="50">
+                </div>
+                <div class="icon">
+                    <img id="iconImg" src="icons/clouds.gif" class="img-circle" alt="clouds" width="50" height="50">
+                </div>
+                <div class="icon">
+                    <img id="iconImg" src="icons/rain.gif" class="img-circle" alt="rain" width="50" height="50">
+                </div>
+            </div>
+        </header>
+
+        <!--        <input class="searchbox" type="text" v-model="search" placeholder="Search cities">-->
+
+        <div class="buttonTop">
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add Your City</button>
+            <h4 class="centerH4" v-if="cityAlreadyAdded">You can not add the same city</h4>
+<!--            <h4 v-if="filteredCities !==filteredCities.name">No Results Found</h4>-->
+        </div>
+
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Enter Your Search Here</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input class="searchbox2" type="text" v-model="searchCity" placeholder="Search new city">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" v-on:click="secondFetch">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="allCities">
+            <div v-for="city, index in filteredCities">
+                <div class="mainTopCenter" v-if="filteredCities.length > 6 && index == 0">
+                    <div class="thumbnail text-center">
+                        <img :src="getCityImages()" alt="landscape" class="img-responsive" style="width:100%">
+                        <div class="caption" class="shadow">
+
+                            <img class="iconImg2" v-bind:src="getWeatherIcon(city.weather[0].description)" width="50" height="50">
+                            <!-- <img class="iconImg2" v-if="city.weather[0].description.match(/sun/g)" src="/icons/sun.gif" alt="sun" width="50" height="50">
+                            <img class="iconImg2" v-if="city.weather[0].description.match(/clouds/g)" src="/icons/clouds.gif" alt="clouds" width="50" height="50">
+                            <img class="iconImg2" v-if="city.weather[0].description.match(/rain/g)" src="/icons/rain.gif" alt="rain" width="50" height="50"> -->
+                            <p class="cityName">{{city.name}}</p>
+                            <p class="description">{{city.weather[0].description}}</p>
+                            <p class="temp">{{city.main.temp}} ºC</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4" v-else>
+                    <div class="thumbnail text-center">
+                        <img :src="getCityImages()" alt="landscape" class="img-responsive" style="width:100%">
+                        <div class="caption" class="shadow">
+                            <img class="iconImg2" v-bind:src="getWeatherIcon(city.weather[0].description)" width="50" height="50">
+                            <!-- <img class="iconImg2" v-if="city.weather[0].description.match(/sun/g)" src="/icons/sun.gif" alt="sun" width="50" height="50">
+                            <img class="iconImg2" v-if="city.weather[0].description.match(/clouds/g)" src="/icons/clouds.gif" alt="clouds" width="50" height="50">
+                            <img class="iconImg2" v-if="city.weather[0].description.match(/rain/g)" src="/icons/rain.gif" alt="rain" width="50" height="50"> -->
+                            <p class="cityName">{{city.name}}</p>
+                            <p class="description">{{city.weather[0].description}}</p>
+                            <p class="temp">{{city.main.temp}} ºC</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2016 WEATHER | All Rights Reserved</p>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="weather.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="weather.js"></script>
+
+</body>
+
+</html>
