@@ -50,7 +50,7 @@
                      this.cityAlreadyAdded = false; // else it's false
                  }
              }
-             this.url = "http://api.openweathermap.org/data/2.5/weather?q=" + this.searchCity + "&units=metric&APPID=4835de947c0522e6c3c7f5067f10bfff";
+             this.url = "https://api.openweathermap.org/data/2.5/weather?q=" + this.searchCity + "&units=metric&APPID=4835de947c0522e6c3c7f5067f10bfff";
              this.fetchData(this.url); // then puts the URL into the fetchData function as argument
              // both URLs passed thru fetchData function as argument. Data comes back and if array more than 6 it add another one to the front else array is data.list (the 6 default cities).
          }

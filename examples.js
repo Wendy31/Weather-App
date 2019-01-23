@@ -23,7 +23,7 @@ var app = new Vue({
         //     return (kelvin - 273.15).toFixed(1);
         // },
         // fetchData function to fetch data from a URL
-        fetchData() { 
+        fetchData() {
             // var turl = new URL(this.url);
             // const params = { 
             //     id: this.cityIds.join(","),
@@ -56,7 +56,7 @@ var app = new Vue({
             // We take Math.floor to get the lowest bound of the decimal number
             // We add 1 because we generate numbers form 0-1 we could get 0 but out lowest number acceptable is 1.
             // toString is because we are concatenating strings. If we did not have this then we would attempt to add a number to a string.
-            var num = (Math.floor(Math.random() * 9) + 1).toString() 
+            var num = (Math.floor(Math.random() * 9) + 1).toString()
             return "./assets/images/landscape-" + num + ".jpg"
         },
         // match weather icon with appropriate description and display
@@ -74,7 +74,7 @@ var app = new Vue({
             }
             // var src = document.getElementById('iconImg').getAttribute('src');
             // if (city.weather[0].description.match(/sun/g)) {
-                // iconImg.style.display('src', "sun.gif");
+            // iconImg.style.display('src', "sun.gif");
             // } else if (city.weather[0].description.match(/clouds/g)) {
             //     iconImg.style.display('src', "clouds.gif");
             // } else if (city.weather[0].description.match(/rain/g)) {
